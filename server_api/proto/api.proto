@@ -1,0 +1,18 @@
+syntax = "proto3";
+package api;
+
+message Null {}
+
+service CoreService {
+    // Test function, used for testing whatever is currently under development
+    rpc Test (Null) returns (Null);
+
+    // Creates a new user in the database
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+}
+
+message CreateUserRequest {}
+
+message CreateUserResponse {
+    string user_id = 1;
+}
