@@ -12,7 +12,7 @@ use crate::api::core_service_server::CoreServiceServer;
 async fn main() -> Result<()> {
     // Create a filter that limits the log level to TRACE for this module, and INFO for everything else
     let filter = tracing_subscriber::filter::Targets::new()
-        .with_default(Level::INFO)
+        .with_default(Level::DEBUG)
         .with_target("module", Level::TRACE)
         .with_target(module_path!(), Level::TRACE);
     // Initialize the logger
