@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
         .expect("Failed to read key file");
 
     // Create the gRPC listener
-    let address = "127.0.0.1:443".parse()?;
+    let address = "0.0.0.0:443".parse()?;
     info!("gRPC listening at {}", address);
     let server = api::Server {};
     let api_listener = Server::builder()
